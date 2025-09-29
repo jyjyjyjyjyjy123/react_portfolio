@@ -1,0 +1,108 @@
+#intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh; /* 최신 단위: 기기 실제 보이는 높이 */
+  height: auto;
+  text-align: center;
+  background: linear-gradient(135deg, #fceabb, #f8b500, #fceabb, #f8b500);
+  background-size: 400% 400%;
+  animation: gradientAnim 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* 배경 그라데이션 애니메이션 */
+@keyframes gradientAnim {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* 제목/텍스트 */
+#mainTitle {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fadeInUp 1s forwards 0.5s;
+}
+
+#mainDesc {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 50px;
+  min-height: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1s forwards 1s;
+}
+
+/* FadeInUp 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll 아이콘 */
+#scrollIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 30px;
+  cursor: pointer;
+}
+
+#scrollIcon .mouse {
+  width: 18px;
+  height: 22px;
+  border: 2px solid #333;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+#scrollIcon .wheel {
+  width: 3px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  animation: wheelMove 1.2s infinite;
+}
+
+@keyframes wheelMove {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(5px);}
+  100% {transform: translateY(0);}
+}
+
+#scrollIcon span {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+  animation: fadeInUp 1s forwards 1.5s;
+}
+
+/* 반응형 대응 */
+@media (max-width: 768px) {
+  #mainTitle {
+    font-size: 2.2rem;
+  }
+  #mainDesc {
+    font-size: 1.2rem;
+  }
+  #scrollIcon {
+    bottom: 20px;
+  }
+}

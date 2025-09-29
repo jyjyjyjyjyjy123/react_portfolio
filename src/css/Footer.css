@@ -1,0 +1,12 @@
+/* ──────────────────────────────── */
+/* Footer */
+#footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+#footer p {
+  margin: 5px 0;
+}
