@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/Intro.css";
 
 function Intro() {
-  const fullText = "풀스택 개발자"; // 타이핑 효과 텍스트
+  const fullText = "Full-Stack Developer"; // 타이핑 효과 텍스트
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
@@ -11,7 +11,7 @@ function Intro() {
       setDisplayText(fullText.slice(0, index + 1));
       index++;
       if (index === fullText.length) clearInterval(interval);
-    }, 150);
+    }, 120);
     return () => clearInterval(interval);
   }, []);
 
@@ -22,10 +22,7 @@ function Intro() {
 
       {/* 스크롤 안내 아이콘 */}
       <div id="scrollIcon">
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
-        <span>Scroll Down</span>
+        <span className="arrow">↓</span>
       </div>
     </section>
   );
