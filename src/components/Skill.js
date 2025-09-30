@@ -2,10 +2,10 @@ import React from "react";
 import "../css/Skill.css";
 
 // 아이콘 import
-import javaIcon from "../assets/icons/icon_java.png";
+import javaIcon from "../assets/icons/icon_java.svg";
 import springIcon from "../assets/icons/icon_spring.svg";
 import springBootIcon from "../assets/icons/icon_springBoot.svg";
-import mybatisIcon from "../assets/icons/icon_myBatis.png";
+import mybatisIcon from "../assets/icons/icon_myBatis.svg";
 import restApiIcon from "../assets/icons/icon_restApi.svg";
 import htmlIcon from "../assets/icons/icon_html.svg";
 import cssIcon from "../assets/icons/icon_css.svg";
