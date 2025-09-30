@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/Intro.css";
 
 function Intro() {
-  const fullText = "프론트엔드 개발자"; // 타이핑 효과 텍스트
+  const fullText = "풀스택 개발자"; // 타이핑 효과 텍스트
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {

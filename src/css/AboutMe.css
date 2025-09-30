@@ -25,10 +25,11 @@
 .aboutme-img {
   width: 180px;
   height: 180px;
+    padding: 10px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top center; /* 위쪽 중심으로 보여줌 */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
 }
 
 .aboutme-info-container {
@@ -58,7 +59,7 @@
     padding: 12px 16px;
     background-color: #f8f8f8;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    /*box-shadow: 0 4px 12px rgba(0,0,0,0.08);*/
     display: flex;
     align-items: center;
     gap: 10px;
