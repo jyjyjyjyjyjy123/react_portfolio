@@ -9,9 +9,8 @@ import Projects from "./components/Projects";
 function App() {
   const [activeSection, setActiveSection] = useState("intro");
 
-  const sections = ["intro", "aboutme", "skills", "projects"];
-
   useEffect(() => {
+    const sections = ["intro", "aboutme", "skills", "projects"];
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       sections.forEach((id) => {
@@ -27,7 +26,7 @@ function App() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sections]);
+  }, []);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
