@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../css/Projects.css";
 
-import icon_github from "../assets/images/icon_github.svg";
+import icon_github from "../assets/icons/icon_github.svg";
+import icon_hyperlink from "../assets/icons/icon_hyperlink.svg";
 
 import project1_1 from "../assets/images/project1_portfolio1.png";
 import project1_2 from "../assets/images/project1_portfolio2.png";
@@ -15,14 +16,30 @@ import project2_3 from "../assets/images/project2_portfolio3.png";
 import project2_4 from "../assets/images/project2_portfolio4.png";
 import project2_5 from "../assets/images/project2_portfolio5.png";
 import project2_6 from "../assets/images/project2_portfolio6.png";
-/*import project3_1 from "../assets/images/project1_portfolio1.png";
-import project3_2 from "../assets/images/project2_portfolio1.png";
-import project4_1 from "../assets/images/project1_portfolio1.png";
-import project4_2 from "../assets/images/project2_portfolio1.png";*/
+import project3_1 from "../assets/images/project2_portfolio1.png";
+import project3_2 from "../assets/images/project2_portfolio2.png";
+import project3_3 from "../assets/images/project2_portfolio3.png";
+import project3_4 from "../assets/images/project2_portfolio4.png";
+import project3_5 from "../assets/images/project2_portfolio5.png";
+import project3_6 from "../assets/images/project2_portfolio6.png";
 
 const projectsData = [
     {
         id: 1,
+        title: "MAPPLE",
+        period: "2025.09.29 - 2025.10.27",
+        description: "모바일 화면 기준의 맛집 혹은 추천하는 장소를 게시글로 작성하여 다른 사람과 공유하는 커뮤니티 웹사이트",
+        details: ["글, 이미지, 장소를 등록하여 게시글 작성을 작성하여 다른사람의 즐겨찾기, 좋아요, 댓글을 통한 커뮤니티하고 원하는 지역의 추천 가게 및 장소를 볼수있는 웹사이트이다.",
+                   "작성한 장소와 게시글의 로그를 통계내어 실시간으로 인기많은 장소와 게시글을 추천하며 포인트맵을 통해 원하는 지역의 추천 가게 및 장소와 해당 게시글을 볼수있는 웹사이트이다."],
+        features: ["게시글 작성", "게시글 검색 및 페이징 정렬", "내정보 수정", "카카오맵을 통한 위치 표시"],
+        tech: ["React", "Spring Boot", "PostgreSQL", "MyBatis", "Render", "kakaoMap API"],
+        contribution: ["전체 프로젝트 설계 및 제작"],
+        images: [project3_1, project3_2, project3_3, project3_4, project3_5, project3_6],
+        git: "https://github.com/jyjyjyjyjyjy123/wara",
+        address: "https://wara-ooug.onrender.com",
+    },
+    {
+        id: 2,
         title: "아파! 어디가?",
         period: "2023.12.18 - 2023.12.27",
         description: "증상을 선택하여 병원 검색 및 예약 가능하며 의학 정보 제공하는 플랫폼입니다.",
@@ -35,7 +52,7 @@ const projectsData = [
         git: "https://github.com/jyjyjyjyjyjy123/SY_spring_Project",
     },
     {
-        id: 2,
+        id: 3,
         title: "아틀란 뱅크",
         period: "2024.01.03 - 2024.02.08",
         description: "금융 서비스 제공 및 고객 경험 개선하기 위한 은행 서비스 입니다.",
@@ -187,6 +204,18 @@ function Projects() {
                 >
                     <img src={icon_github} alt="GitHub" className="github-icon" />
                 </a>
+                {/* 웹페이지 버튼 */}
+                {selected.address && (
+                  <a
+                    href={selected.address}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="circle-btn address-btn"
+                    onClick={(e) => e.stopPropagation()} // 모달 클릭 이벤트 전파 막기
+                  >
+                    <img src={icon_hyperlink} alt="address" className="address-icon" />
+                  </a>
+                )}
               </div>
             </div>
           )}
