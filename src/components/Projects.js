@@ -16,12 +16,12 @@ import project2_3 from "../assets/images/project2_portfolio3.png";
 import project2_4 from "../assets/images/project2_portfolio4.png";
 import project2_5 from "../assets/images/project2_portfolio5.png";
 import project2_6 from "../assets/images/project2_portfolio6.png";
-import project3_1 from "../assets/images/project2_portfolio1.png";
-import project3_2 from "../assets/images/project2_portfolio2.png";
-import project3_3 from "../assets/images/project2_portfolio3.png";
-import project3_4 from "../assets/images/project2_portfolio4.png";
-import project3_5 from "../assets/images/project2_portfolio5.png";
-import project3_6 from "../assets/images/project2_portfolio6.png";
+import project3_1 from "../assets/images/project3_portfolio1.png";
+import project3_2 from "../assets/images/project3_portfolio2.png";
+import project3_3 from "../assets/images/project3_portfolio3.png";
+import project3_4 from "../assets/images/project3_portfolio4.png";
+import project3_5 from "../assets/images/project3_portfolio5.png";
+import project3_6 from "../assets/images/project3_portfolio6.png";
 
 const projectsData = [
     {
