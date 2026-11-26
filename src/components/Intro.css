@@ -1,0 +1,71 @@
+#intro {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  background:
+    radial-gradient(ellipse at 84% 26%, rgba(150, 173, 122, .23), transparent 42%),
+    radial-gradient(ellipse at 73% 57%, rgba(58, 123, 103, .46), transparent 58%),
+    linear-gradient(145deg, #193830, #122c26 61%, #091c18);
+  color: #fff;
+}
+
+#intro .section-shell {
+  padding-block: 72px 100px;
+}
+
+#mainTitle {
+  max-width: 12em;
+  font-size: clamp(2.45rem, 7.5vw, 6rem);
+  line-height: 1.12;
+  letter-spacing: -.075em;
+  word-break: keep-all;
+}
+
+#mainTitle span { display: inline-block; }
+
+#mainDesc {
+  width: fit-content;
+  margin-bottom: 14px;
+  color: #c7e5d5;
+  font-size: clamp(.85rem, 2vw, 1.125rem);
+  font-weight: 650;
+  letter-spacing: .075em;
+}
+
+#scrollIcon {
+  position: absolute;
+  inset-inline: 0;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-inline: auto;
+  font-size: 1.75rem;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+}
+
+#scrollIcon:hover { color: #bde3ce; }
+#scrollIcon:focus-visible { outline-color: #fff; }
+
+@media (prefers-reduced-motion: no-preference) {
+  #mainDesc { animation: type-intro 500ms steps(20, end) 260ms both; }
+  #mainTitle span { animation: appear 340ms ease-out 540ms both; }
+  #mainTitle span + span { animation-delay: 640ms; }
+  #scrollIcon { animation: appear 340ms ease-out 800ms both; }
+  #scrollIcon span { animation: scroll-hint 1.65s ease-in-out 1.15s infinite; }
+}
+
+@keyframes type-intro {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0); }
+}
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(-3px); }
+  50% { transform: translateY(5px); }
+}

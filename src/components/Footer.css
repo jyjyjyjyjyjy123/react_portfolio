@@ -1,0 +1,10 @@
+#footer {
+  display: grid;
+  place-items: center;
+  min-height: var(--header-height);
+  padding: 5px var(--gutter);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  text-align: center;
+  font-size: .875rem;
+}

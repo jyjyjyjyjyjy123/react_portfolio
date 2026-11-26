@@ -1,0 +1,93 @@
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  height: calc(var(--header-height) + 6px);
+  margin-bottom: calc(-1 * (var(--header-height) + 6px));
+  pointer-events: none;
+}
+
+#header ul {
+  display: flex;
+  margin: 0;
+  list-style: none;
+}
+
+#header nav {
+  width: min(784px, calc(100% - 24px));
+  margin-inline: auto;
+  padding-block: 9px 3px;
+  pointer-events: auto;
+}
+
+#header ul {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 3px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+}
+
+#header.is-scrolled ul {
+  border-color: #c8ceca;
+  background: #e9ecea;
+}
+
+#header ul::before {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: var(--tab-width, 0px);
+  height: calc(var(--header-height) - 14px);
+  border-radius: 999px;
+  background: var(--accent);
+  opacity: 0;
+  content: "";
+  transform: translateX(var(--tab-offset, 0px));
+  transition-property: transform, width, opacity;
+  transition-duration: var(--nav-motion-duration);
+  transition-timing-function: cubic-bezier(.333, 0, .667, 1);
+}
+
+#header.is-scrolled ul::before { opacity: 1; }
+
+#header li { position: relative; }
+
+#header a {
+  display: grid;
+  place-items: center;
+  min-height: calc(var(--header-height) - 14px);
+  padding-inline: 3px;
+  border-radius: 999px;
+  color: #4d5953;
+  font-size: clamp(.75rem, 2.4vw, .9rem);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+#header a:not(.active):hover { color: var(--accent); }
+#header a.active { color: #fff; }
+#header a.active:hover { color: #c7e5d5; }
+
+#header:not(.is-scrolled) a { color: #c7e5d5; }
+#header:not(.is-scrolled) a.active,
+#header:not(.is-scrolled) a:hover { color: #fff; }
+#header:not(.is-scrolled) a.active:hover { color: #a9d8bf; }
+#header:not(.is-scrolled) a:focus-visible { outline-color: #c7e5d5; }
+
+@media (prefers-reduced-motion: no-preference) {
+  #header ul { transition: background-color 260ms ease, border-color 260ms ease; }
+  #header a { transition: color 260ms ease; }
+  #header li { animation: appear 280ms ease-out both; }
+  #header li:nth-child(2) { animation-delay: 65ms; }
+  #header li:nth-child(3) { animation-delay: 130ms; }
+  #header li:nth-child(4) { animation-delay: 195ms; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header ul::before { transition: none; }
+}
+
